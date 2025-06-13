@@ -1,0 +1,19 @@
+| Code | Meaning               | Example Use         |
+| ---- | --------------------- | ------------------- |
+| 200  | OK                    | Success             |
+| 201  | Created               | Resource added      |
+| 400  | Bad Request           | Missing data        |
+| 401  | Unauthorized          | Invalid login       |
+| 404  | Not Found             | URL or data missing |
+| 500  | Internal Server Error | Server crash or bug |
+
+
+| Status Code | Name                  | Is it an error in Axios? | Meaning                               |
+| ----------- | --------------------- | ------------------------ | ------------------------------------- |
+| `200`       | OK                    | ❌ No (goes to `try`)     | Request was successful                |
+| `201`       | Created               | ❌ No                     | New resource was successfully created |
+| `400`       | Bad Request           | ✅ Yes (goes to `catch`)  | Client sent invalid data              |
+| `401`       | Unauthorized          | ✅ Yes                    | Invalid token or missing credentials  |
+| `403`       | Forbidden             | ✅ Yes                    | Authenticated but not allowed         |
+| `404`       | Not Found             | ✅ Yes                    | Endpoint or resource not found        |
+| `500`       | Internal Server Error | ✅ Yes                    | Server crashed or bug on backend      |
